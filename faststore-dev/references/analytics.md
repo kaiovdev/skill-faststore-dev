@@ -1,0 +1,7 @@
+# Analytics em funcionalidades FastStore
+
+Leia esta referência quando uma mudança criar, remover ou alterar eventos. Primeiro procure o fluxo já usado pela loja e confirme a API na versão instalada. Preserve nomes e payloads consumidos por integrações existentes; evite eventos duplicados, dados pessoais desnecessários e disparos antes de sucesso real.
+
+No SDK documentado pela VTEX, [`sendAnalyticsEvent`](https://developers.vtex.com/docs/guides/faststore/analytics-send-analytics-event) emite o evento no navegador; ele não o entrega sozinho a Google Analytics ou outro provedor. [`useAnalyticsEvent`](https://developers.vtex.com/docs/guides/faststore/analytics-use-analytics-event) pode interceptar o evento para que a integração da loja o encaminhe. Confira o handler, consentimento, `dataLayer` e configuração de GTM presentes no projeto antes de concluir que um evento está sendo medido.
+
+Para eventos próprios, consulte [Sending custom events](https://developers.vtex.com/docs/guides/faststore/analytics-sending-custom-events). O [exemplo oficial de newsletter](https://developers.vtex.com/docs/guides/faststore/analytics-implementing-custom-newsletter-analytics-events) distingue tentativa de envio e inscrição bem-sucedida; ele usa um fluxo de CMS legado, portanto não copie sua estrutura de arquivos sem confirmar o CMS da loja. Valide nomes, payload e momento de disparo no comportamento pedido.
