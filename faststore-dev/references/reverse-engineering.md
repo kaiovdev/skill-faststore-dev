@@ -1,10 +1,18 @@
 # Engenharia reversa de uma loja FastStore
 
-Use quando o pedido for entender a arquitetura, reconstruir o fluxo de uma funcionalidade ou documentar uma loja existente. Comece pelo escopo perguntado; se for amplo, produza primeiro um panorama curto e aprofunde apenas os fluxos relevantes. A leitura do repositório mostra a implementação, mas não comprova por si só o conteúdo publicado no CMS nem o comportamento em produção.
+Use quando o usuário pedir para entender como uma página, componente, seção, interação ou integração funciona. Investigue **o fluxo solicitado**, sem transformar um pedido pontual em inventário da loja inteira. Se o pedido for amplo, apresente primeiro os fluxos principais e aprofunde os que importam para a pergunta.
 
-1. Confirme raiz, versão, geração do CMS e organização local com [version-detection.md](version-detection.md) e [architecture.md](architecture.md). Separe código da loja, dependências, arquivos gerados e configuração de ambiente.
-2. Parta de uma rota, seção ou interação concreta e siga imports e consumidores. Rastreie `rota → dados/API/GraphQL → estado e hooks → seção/componente → CMS → SCSS/tema`, incluindo eventos de analytics e efeitos externos quando existirem. Não presuma que um nome de arquivo corresponde ao que é renderizado.
-3. Para cada ligação importante, registre o arquivo, o símbolo ou a configuração que a demonstra. Classifique como confirmado, inferido ou não verificado. Se houver acesso legítimo a uma prévia ou à loja, use a observação para confirmar comportamento visual e conteúdo, distinguindo-a do que o código prova.
-4. Entregue um mapa legível dos fluxos pedidos, pontos de extensão, dependências e riscos relevantes para a próxima tarefa. Se o usuário quiser reproduzir ou modificar uma funcionalidade, explique primeiro seu contrato e onde ela se conecta; depois siga o fluxo normal de implementação.
+## Padrão de investigação
 
-Não edite a loja em um pedido apenas de mapeamento. Não copie nomes de clientes, URLs privadas, credenciais ou observações de um repositório para as referências globais da skill. Limite a conclusão ao que foi inspecionado; um mapa parcial deve dizer quais rotas ou integrações ficaram fora do escopo.
+1. **Delimite a pergunta e o ponto de entrada.** Identifique a rota, seção, componente, evento ou ação mencionada. Confirme raiz, versão, CMS e organização local com [version-detection.md](version-detection.md) e [architecture.md](architecture.md), apenas até o nível necessário para interpretar esse fluxo.
+2. **Siga as conexões reais.** Localize quem chama ou registra o ponto de entrada e acompanhe imports, props, schemas, hooks e consumidores. Para uma interação, comece também pelo evento do usuário e siga o handler até a alteração de estado ou chamada externa. Não deduza execução só pelo nome de um arquivo.
+3. **Reconstrua a cadeia causal.** Explique de onde vêm os dados (CMS, props, API/GraphQL, SDK ou estado local), como são transformados, quais condições e efeitos mudam o caminho e o que o componente renderiza ou atualiza. Inclua SCSS/tema, analytics e integrações apenas quando afetarem o comportamento pedido. A ordem pode variar: uma ação do carrinho começa no clique; uma página pode começar na rota ou no CMS.
+4. **Confira cada elo importante.** Aponte arquivo e símbolo ou linha que sustentam a ligação. Compare código da loja, dependência instalada e configuração quando necessário. Diferencie comportamento confirmado pelo código, inferência e ponto não verificado. O repositório sozinho não comprova conteúdo publicado no CMS nem comportamento em produção; se houver prévia disponível, relate essa observação separadamente.
+
+## Como explicar ao usuário
+
+Comece com uma frase que responda diretamente à pergunta. Depois apresente o fluxo na ordem em que acontece, em poucos passos: **entrada → origem dos dados → processamento/estado → resultado visível ou efeito externo**. Em cada passo, diga **o que o código faz**, **por que isso leva ao próximo passo** e **onde conferir**. Acrescente CMS, SCSS, variantes e pontos de extensão quando fizerem diferença para aquele fluxo. Para caminhos alternativos, explique a condição que seleciona cada um; não descreva arquivos isolados sem mostrar a ligação entre eles.
+
+Feche com lacunas relevantes e impacto prático para a tarefa do usuário. Um diagrama curto pode ajudar quando houver várias camadas, mas não substitui a explicação e as referências ao código. Se o usuário pedir alteração, use o mapa para localizar o contrato responsável e siga o fluxo normal de implementação; se pedir apenas entendimento, não edite a loja.
+
+Não copie nomes de clientes, URLs privadas, credenciais ou observações de um repositório para as referências globais da skill. Limite a conclusão ao que foi inspecionado; um mapa parcial deve dizer quais rotas ou integrações ficaram fora do escopo.

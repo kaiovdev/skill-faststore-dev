@@ -4,7 +4,8 @@ Use estas solicitações em sessões novas com projetos de exemplo sem dados pri
 
 | Pedido de exemplo | Preparação mínima | Comportamento esperado |
 | --- | --- | --- |
-| “Mapeie como a PDP desta loja recebe dados e renderiza a seção de produto.” | Projeto FastStore com PDP e CMS identificáveis | A skill é acionada; entrega fluxo com referências ao código, distingue conteúdo publicado de implementação e não edita arquivos. |
+| “Mapeie como a PDP desta loja recebe dados e renderiza a seção de produto.” | Projeto FastStore com PDP e CMS identificáveis | A skill é acionada; explica em ordem entrada, origem e transformação dos dados e renderização, com referências ao código; distingue conteúdo publicado de implementação e não edita arquivos. |
+| “Faça a engenharia reversa do botão de adicionar ao carrinho e explique o fluxo.” | Loja com handler, estado do SDK e feedback visual | Parte do clique, segue chamada e estado até o resultado; explica condições e efeitos com evidências, sem narrar arquivos desconectados nem alterar o código. |
 | “Explique o que cada parte deste componente faz.” | Componente FastStore existente com props, hook e SCSS | Percorre chamada, dados, estado, renderização e estilos; não inventa defeito nem modifica o projeto. |
 | “Crie uma newsletter customizada.” | Loja com Newsletter nativa ou UI Component semelhante | Compara a opção existente e seus limites, explica alternativas e pede preferência se a abordagem ainda não estiver definida. |
 | “Adicione analytics de sucesso à newsletter.” | Loja FastStore com handler de analytics | Confere emissão e encaminhamento ao provedor, dispara sucesso só após resposta válida e evita dados pessoais no payload. |

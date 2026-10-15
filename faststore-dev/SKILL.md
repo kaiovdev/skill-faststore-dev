@@ -1,6 +1,6 @@
 ---
 name: faststore-dev
-description: Desenvolver, mapear e depurar lojas VTEX FastStore existentes. Use para entender a arquitetura de uma loja, criar ou evoluir componentes e seções e investigar erros, sempre a partir da versão, do CMS e dos padrões do projeto real.
+description: Desenvolver, depurar e fazer engenharia reversa de lojas VTEX FastStore existentes. Use para explicar o fluxo de uma funcionalidade, entender a arquitetura, criar ou evoluir componentes e seções ou investigar erros a partir do projeto real.
 ---
 
 # FastStore development
@@ -22,7 +22,7 @@ Descubra as convenções diretamente no repositório da tarefa. Não registre no
 
 Em tarefas de debug, leia o código e seus consumidores para mostrar o erro, a causa e a evidência, ou explicar o fluxo do componente parte por parte quando esse for o pedido. Separe causa confirmada de hipótese e use [debugging-and-troubleshooting.md](references/debugging-and-troubleshooting.md). Se o usuário pedir correção, implemente-a; se pedir somente explicação, não altere código.
 
-Para entender ou documentar uma loja existente, siga [reverse-engineering.md](references/reverse-engineering.md) e entregue um mapa rastreável sem editar o projeto, salvo pedido de mudança. Em tarefas de analytics ou busca, consulte respectivamente [analytics.md](references/analytics.md) e [search.md](references/search.md) apenas quando pertinentes.
+Para fazer engenharia reversa, siga [reverse-engineering.md](references/reverse-engineering.md): trace o fluxo específico pedido pelo usuário e explique, em ordem, de onde vêm os dados, como o código os processa e qual comportamento produz, com evidências nos arquivos. Não edite o projeto quando o pedido for apenas de entendimento. Em tarefas de analytics ou busca, consulte respectivamente [analytics.md](references/analytics.md) e [search.md](references/search.md) apenas quando pertinentes.
 
 ## Referências sob demanda
 
@@ -37,7 +37,7 @@ Para entender ou documentar uma loja existente, siga [reverse-engineering.md](re
 - [quality-and-testing.md](references/quality-and-testing.md): validação, revisão e cenários de avaliação da skill.
 - [seo-performance-accessibility.md](references/seo-performance-accessibility.md): requisitos não funcionais de página ou componente.
 - [debugging-and-troubleshooting.md](references/debugging-and-troubleshooting.md): diagnosticar erros com causa e evidência ou explicar o fluxo de um componente existente.
-- [reverse-engineering.md](references/reverse-engineering.md): mapear uma loja existente e explicar como suas partes se conectam.
+- [reverse-engineering.md](references/reverse-engineering.md): rastrear e explicar passo a passo o fluxo de uma funcionalidade existente.
 - [analytics.md](references/analytics.md): preservar e implementar eventos de analytics quando a tarefa envolver rastreamento.
 - [search.md](references/search.md): entender estado, facetas, ordenação, paginação e URLs de busca.
 - [official-sources.md](references/official-sources.md): índice de fontes e limites de versão; confirme atualidade ao usar.

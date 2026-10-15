@@ -7,7 +7,7 @@ Uma Agent Skill para desenvolver e depurar **lojas VTEX FastStore existentes**. 
 - **Desenvolve componentes e seções:** procura primeiro implementações do projeto, FastStore UI Components e seções nativas. Quando encontra uma opção semelhante, explica o que ela atende e o que precisaria ser adaptado antes de seguir com uma abordagem.
 - **Evolui código existente:** trabalha com React, TypeScript, GraphQL, CMS e SCSS conforme os padrões encontrados na área da loja. Usa princípios SOLID e Clean Code para manter responsabilidades e contratos claros, sem impor Atomic Design ou outra estrutura.
 - **Investiga erros:** segue props, hooks, dados, renderização e estilos para mostrar onde o problema ocorre, por que ocorre e quais evidências sustentam o diagnóstico.
-- **Mapeia a loja:** reconstrói o fluxo de uma página ou funcionalidade, ligando rota, dados, componentes, CMS e estilos aos arquivos do repositório.
+- **Faz engenharia reversa:** segue o fluxo pedido do ponto de entrada aos dados, decisões e resultado, explicando cada ligação com evidências nos arquivos do repositório.
 
 Por exemplo, ao pedir uma *newsletter customizada*, a skill verifica a implementação existente e as opções nativas, compara campos e comportamento com o pedido e orienta a escolha entre reutilizar, adaptar ou criar uma seção própria.
 

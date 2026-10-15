@@ -7,7 +7,7 @@ Skill para trabalhar em **lojas VTEX FastStore existentes**, inclusive projetos 
 - **Componentes:** procura primeiro no projeto, em `@faststore/ui` e nas seções nativas. Se houver opção parecida, explica o que ela já faz e pergunta se você prefere reutilizar, estender ou criar um componente próprio.
 - **Implementação:** cria ou evolui componentes React, overrides, schemas de seção, integrações GraphQL e funcionalidades de loja seguindo a organização local. Usa SCSS para novas estilizações e aplica SOLID/Clean Code sem adicionar abstrações desnecessárias.
 - **Debug:** rastreia props, dados, hooks, CMS e renderização para mostrar onde está o erro e por que ocorre. Também pode explicar o fluxo de um componente existente sem alterar o código.
-- **Engenharia reversa:** mapeia uma loja existente, do caminho da página aos dados, componentes, CMS e estilos, com evidências no próprio repositório.
+- **Engenharia reversa:** rastreia o fluxo pedido, da entrada aos dados, decisões e resultado, e explica cada etapa com evidências no próprio repositório.
 
 Por exemplo, em uma **newsletter custom**, a skill verifica a Newsletter nativa e o UI Component, compara os campos e o comportamento pedidos e só então propõe override, composição ou seção própria.
 
