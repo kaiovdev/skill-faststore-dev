@@ -22,6 +22,12 @@ Quando o usuário pedir ajuda para desenvolver um componente existente, leia sua
 3. Defina tipos explícitos e estreitos para props, estados e callbacks. Prefira dados derivados a estado duplicado. Dê nomes que expressem a regra da loja; evite booleanos ambíguos, abreviações obscuras e comentários que apenas repetem o código.
 4. Faça a renderização revelar o fluxo principal. Trate loading, erro, vazio e sucesso em pontos previsíveis; extraia condicionais complexas para funções ou subcomponentes com nomes claros quando isso facilitar a leitura.
 
+## Composição, pastas e exports
+
+- Deixe a seção principal responsável pela composição e pelo contrato com o CMS. Extraia componentes para partes com estado, efeitos, regras ou evolução próprios, como busca, navegação e ações; mantenha props pequenas e explícitas. Não crie um arquivo por elemento visual apenas para reduzir o tamanho do pai.
+- Quando a área do projeto usa uma pasta por componente, reúna implementação, estilos e tipos locais nela. Use `index.ts` para expor a API pública da pasta e importe pela pasta nos consumidores. Preserve o estilo de exportação da área: `export *` reexporta exports nomeados, mas não o `default`; para um componente default, use um reexport explícito ou converta os consumidores de forma coerente.
+- Ao mover arquivos, atualize todos os consumidores e confira os caminhos relativos, inclusive de SCSS e tipos. Um SCSS compartilhado pode continuar junto da seção quando layout e breakpoints são coordenados; separe estilos quando tiverem responsabilidade independente.
+
 ## Aplicação prática de SOLID
 
 - **Responsabilidade única:** cada componente ou hook deve ter um motivo principal para mudar. Um bloco visual que também busca dados, traduz contratos externos, atualiza carrinho e envia analytics merece fronteiras explícitas quando essas partes evoluem separadamente.
